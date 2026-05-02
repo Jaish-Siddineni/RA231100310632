@@ -1,13 +1,13 @@
-const https = require("http");
+const http = require("http");
 
-// STEP 1 - REGISTER
+// Replace with your details before running
 const registerData = JSON.stringify({
-  email: "js406@srmist.edu.in",
-  name: "Jaish Siddineni",
-  mobileNo: "9673501672",
-  githubUsername: "Jaish-Siddineni",
-  rollNo: "RA2311003010632",
-  accessCode: "QkbpxH"
+  email: "YOUR_COLLEGE_EMAIL",
+  name: "YOUR_FULL_NAME",
+  mobileNo: "YOUR_MOBILE_NUMBER",
+  githubUsername: "YOUR_GITHUB_USERNAME",
+  rollNo: "YOUR_ROLL_NUMBER",
+  accessCode: "YOUR_ACCESS_CODE"
 });
 
 const options = {
@@ -20,13 +20,13 @@ const options = {
   }
 };
 
-const req = https.request(options, (res) => {
+const req = http.request(options, (res) => {
   let body = "";
   res.on("data", (chunk) => body += chunk);
   res.on("end", () => {
     console.log("REGISTRATION RESPONSE:");
     console.log(body);
-    console.log("\n⚠️  SAVE YOUR clientID and clientSecret - you cannot retrieve them again!");
+    console.log("\n⚠️  SAVE YOUR clientID and clientSecret!");
   });
 });
 
